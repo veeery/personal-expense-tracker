@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../../../core/theme/theme.dart';
 import '../../../../core/utils/utils.dart';
 import '../../domain/entities/entities.dart';
-import 'category_color_helper.dart';
 
 class ExpenseListTile extends StatelessWidget {
   final Expense expense;
@@ -18,7 +17,7 @@ class ExpenseListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categoryColor = CategoryColorHelper.colorFor(expense.category);
+    final categoryColor = expense.category.color;
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: ListTile(
