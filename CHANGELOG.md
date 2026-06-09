@@ -38,3 +38,4 @@
 
 - Fix Fonts color due light and dark theme
 - Fix redundant category widget
+- Fix relocate page settings due clean architecture

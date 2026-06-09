@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../pages/shell/home/expense/add_expense_page.dart';
 import '../../pages/shell/home/home_page.dart';
-import '../../pages/shell/home/settings/settings_page.dart';
+import '../../pages/shell/settings/settings_page.dart';
 import 'app_navigator.dart';
 
 class MainShell extends StatelessWidget {
