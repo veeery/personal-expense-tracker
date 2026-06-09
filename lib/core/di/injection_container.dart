@@ -6,7 +6,7 @@ import '../database/app_database.dart';
 import '../../features/expense/data/datasources/expense_local_datasource.dart';
 import '../../features/expense/data/repositories/expense_repository_impl.dart';
 import '../../features/expense/domain/repositories/expense_repository.dart';
-import '../../features/expense/domain/usecases/get_expense.dart';
+import '../../features/expense/domain/usecases/usecases.dart';
 import '../../features/expense/presentation/cubit/expense_cubit.dart';
 
 final getIt = GetIt.instance;
@@ -30,14 +30,26 @@ Future<void> setupDependencies() async {
   );
 
   // ── UseCases ──────────────────────────────
-  getIt.registerLazySingleton<GetExpenseUseCase>(
-    () => GetExpenseUseCase(getIt<ExpenseRepository>()),
+  getIt.registerLazySingleton<WatchExpensesUseCase>(
+    () => WatchExpensesUseCase(getIt<ExpenseRepository>()),
+  );
+  getIt.registerLazySingleton<AddExpenseUseCase>(
+    () => AddExpenseUseCase(getIt<ExpenseRepository>()),
+  );
+  getIt.registerLazySingleton<UpdateExpenseUseCase>(
+    () => UpdateExpenseUseCase(getIt<ExpenseRepository>()),
+  );
+  getIt.registerLazySingleton<DeleteExpenseUseCase>(
+    () => DeleteExpenseUseCase(getIt<ExpenseRepository>()),
   );
 
   // ── Cubits — factory, bukan singleton ─────
   getIt.registerFactory<ExpenseCubit>(
     () => ExpenseCubit(
-      getExpense: getIt<GetExpenseUseCase>(),
+      watchExpenses: getIt<WatchExpensesUseCase>(),
+      addExpense: getIt<AddExpenseUseCase>(),
+      updateExpense: getIt<UpdateExpenseUseCase>(),
+      deleteExpense: getIt<DeleteExpenseUseCase>(),
     ),
   );
 }

@@ -6,11 +6,15 @@ sealed class ExpenseState extends Equatable {
 }
 
 class ExpenseInitial extends ExpenseState {
+  const ExpenseInitial();
+
   @override
   List<Object?> get props => [];
 }
 
 class ExpenseLoading extends ExpenseState {
+  const ExpenseLoading();
+
   @override
   List<Object?> get props => [];
 }

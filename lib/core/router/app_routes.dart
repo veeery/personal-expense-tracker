@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../../pages/shell/home/expense/add_expense_page.dart';
+import '../../pages/shell/home/expense/edit_expense_page.dart';
 import '../../pages/shell/home/home_page.dart';
 import '../../pages/not_found_page.dart';
 import '../../pages/shell/home/transaction/transaction_detail_page.dart';
@@ -31,6 +32,15 @@ class AppRoutes {
               builder: (context, state) => TransactionDetailPage(
                 id: state.pathParameters['id']!,
               ),
+              routes: [
+                GoRoute(
+                  name: EditExpensePage.route,
+                  path: 'edit',
+                  builder: (context, state) => EditExpensePage(
+                    id: state.pathParameters['id']!,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

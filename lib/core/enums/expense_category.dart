@@ -1,5 +1,8 @@
 // lib/core/enums/expense_category.dart
 
+import 'package:flutter/material.dart';
+import '../theme/app_colors.dart';
+
 enum ExpenseCategory {
   food,
   transport,
@@ -25,4 +28,14 @@ enum ExpenseCategory {
     ExpenseCategory.entertainment => '🎮',
     ExpenseCategory.other => '📦',
   };
+
+  Color get color => switch (this) {
+    ExpenseCategory.food => AppColors.categoryFood,
+    ExpenseCategory.transport => AppColors.categoryTransport,
+    ExpenseCategory.shopping => AppColors.categoryShopping,
+    ExpenseCategory.health => AppColors.categoryHealth,
+    ExpenseCategory.entertainment => AppColors.categoryEntertainment,
+    ExpenseCategory.other => AppColors.categoryOther,
+  };
 }
+
