@@ -8,10 +8,20 @@ import '../../features/expense/data/repositories/expense_repository_impl.dart';
 import '../../features/expense/domain/repositories/expense_repository.dart';
 import '../../features/expense/domain/usecases/usecases.dart';
 import '../../features/expense/presentation/cubit/expense_cubit.dart';
+import '../../features/theme/theme.dart';
 
 final getIt = GetIt.instance;
 
 Future<void> setupDependencies() async {
+  // ── Theme Feature ─────────────────────────
+  getIt.registerLazySingleton<ThemeLocalDataSource>(
+    () => const ThemeLocalDataSource(),
+  );
+
+  getIt.registerLazySingleton<ThemeCubit>(
+    () => ThemeCubit(getIt<ThemeLocalDataSource>()),
+  );
+
   // ── Database ──────────────────────────────
   getIt.registerLazySingleton<AppDatabase>(
     () => AppDatabase(),

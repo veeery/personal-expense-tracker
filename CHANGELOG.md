@@ -5,6 +5,7 @@
 ## 1.0.0+1 (10 Jun 2026)
 
 ### feat
+- Add dark mode
 - Add core project structure — core/, features/, pages/ layers
 - Add AppDatabase with ExpenseTable (Drift) — id, title, amount, date, category, createdAt
 - Add ExpenseCategory enum with label and emoji
