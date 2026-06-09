@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../pages/shell/home/transaction/transaction_list_page.dart';
-
 class AppNavigator {
   AppNavigator._();
 
@@ -102,10 +100,10 @@ class AppNavigator {
   }
 
   static void goEditExpense(BuildContext context, String id) {
-    context.go('${TransactionListPage.route}/$id/edit');
+    context.push('/transactions/$id/edit');
   }
 
   static void goTransactionDetail(BuildContext context, String id) {
-    context.go('${TransactionListPage.route}/$id');
+    context.push('/transactions/$id');
   }
 }
