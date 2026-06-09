@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../pages/shell/home/transaction/transaction_list_page.dart';
+
 class AppNavigator {
   AppNavigator._();
 
@@ -97,5 +99,13 @@ class AppNavigator {
       throw Exception('Invalid or missing argument for type: $T');
     }
     return extra;
+  }
+
+  static void goEditExpense(BuildContext context, String id) {
+    context.go('${TransactionListPage.route}/$id/edit');
+  }
+
+  static void goTransactionDetail(BuildContext context, String id) {
+    context.go('${TransactionListPage.route}/$id');
   }
 }

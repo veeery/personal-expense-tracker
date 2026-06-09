@@ -1,3 +1,4 @@
+import 'package:drift/drift.dart';
 import '../../../../core/database/app_database.dart';
 import '../models/expense_model.dart';
 import '../../domain/entities/entities.dart';
@@ -8,7 +9,8 @@ class ExpenseLocalDataSource {
   const ExpenseLocalDataSource(this.database);
 
   Stream<List<Expense>> watchAll() {
-    return (database.select(database.expenseTable))
+    return (database.select(database.expenseTable)
+          ..orderBy([(t) => OrderingTerm.desc(t.date)]))
         .watch()
         .map((rows) => rows.map((r) => r.toEntity()).toList());
   }
