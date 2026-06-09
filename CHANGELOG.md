@@ -32,3 +32,7 @@
 - Add CHANGELOG.md
 - Add .fvmrc
 - Update .gitignore
+
+### fix
+
+- Fix Fonts color due light and dark theme
