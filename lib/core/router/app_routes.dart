@@ -6,8 +6,8 @@ import '../../pages/shell/home/expense/add_expense_page.dart';
 import '../../pages/shell/home/expense/edit_expense_page.dart';
 import '../../pages/shell/home/home_page.dart';
 import '../../pages/not_found_page.dart';
-import '../../pages/shell/home/settings/settings_page.dart';
-import '../../pages/shell/home/transaction/transaction_detail_page.dart';
+import '../../pages/shell/settings/settings_page.dart';
+import '../../pages/shell/transaction/transaction_detail_page.dart';
 import 'main_shell.dart';
 
 class AppRoutes {
