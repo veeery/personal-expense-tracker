@@ -2,13 +2,11 @@
 
 import 'package:go_router/go_router.dart';
 import '../../pages/not_found_page.dart';
+import '../../pages/shell/home/home_page.dart';
 import 'app_routes.dart';
 
 final appRouter = GoRouter(
-  initialLocation: TransactionListPageRoute,
+  initialLocation: HomePage.route,
   routes: AppRoutes.routes,
   errorBuilder: (context, state) => const NotFoundPage(),
 );
-
-// Route constants — referenced di AppRoutes dan pages
-const TransactionListPageRoute = '/transactions';

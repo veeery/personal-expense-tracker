@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../pages/shell/home/expense/add_expense_page.dart';
 import '../../pages/shell/home/home_page.dart';
-import '../../pages/shell/home/transaction/transaction_list_page.dart';
+import '../../pages/shell/home/settings/settings_page.dart';
 import 'app_navigator.dart';
 
 class MainShell extends StatelessWidget {
@@ -28,14 +28,14 @@ class MainShell extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.receipt_long_outlined),
-            activeIcon: Icon(Icons.receipt_long),
-            label: 'Transactions',
+            icon: Icon(Icons.settings_outlined),
+            activeIcon: Icon(Icons.settings),
+            label: 'Settings',
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => AppNavigator.go(
+        onPressed: () => AppNavigator.push(
           context: context,
           path: AddExpensePage.route,
         ),
@@ -47,7 +47,7 @@ class MainShell extends StatelessWidget {
 
   int _locationToIndex(String location) {
     if (location.startsWith(HomePage.route)) return 0;
-    if (location.startsWith(TransactionListPage.route)) return 1;
+    if (location.startsWith(SettingsPage.route)) return 1;
     return 0;
   }
 
@@ -56,7 +56,7 @@ class MainShell extends StatelessWidget {
       case 0:
         AppNavigator.go(context: context, path: HomePage.route);
       case 1:
-        AppNavigator.go(context: context, path: TransactionListPage.route);
+        AppNavigator.go(context: context, path: SettingsPage.route);
     }
   }
 }
